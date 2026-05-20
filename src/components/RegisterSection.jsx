@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { api } from "../api/dbService";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function RegisterSection() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,8 @@ export default function RegisterSection() {
   });
   const [error, setError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const months = [
     { value: "01", label: "JANUARY" },
@@ -237,16 +240,29 @@ export default function RegisterSection() {
           <label className="text-[9px] font-bold tracking-widest text-black uppercase">
             <span className="text-red-500 mr-1">*</span>Password
           </label>
-          <input
-            type="password"
-            required
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-            className={`border px-4 py-3 text-sm focus:outline-none transition-colors ${
-              passwordError ? "border-red-500 focus:border-red-500" : "border-neutral-200 focus:border-black"
-            }`}
-          />
+          <div className="relative w-full">
+            <input
+              type={showPassword ? "text" : "password"}
+              required
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              className={`w-full border pl-4 pr-10 py-3 text-sm focus:outline-none transition-colors ${
+                passwordError ? "border-red-500 focus:border-red-500" : "border-neutral-200 focus:border-black"
+              }`}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-black transition-colors focus:outline-none flex items-center justify-center"
+            >
+              {showPassword ? (
+                <EyeOff className="w-4 h-4" />
+              ) : (
+                <Eye className="w-4 h-4" />
+              )}
+            </button>
+          </div>
           {passwordError ? (
             <p className="text-[10px] text-red-500 mt-1 font-medium">{passwordError}</p>
           ) : (
@@ -260,14 +276,27 @@ export default function RegisterSection() {
           <label className="text-[9px] font-bold tracking-widest text-black uppercase">
             <span className="text-red-500 mr-1">*</span>Confirm Password
           </label>
-          <input
-            type="password"
-            required
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleInputChange}
-            className="border border-neutral-200 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors"
-          />
+          <div className="relative w-full">
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              required
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleInputChange}
+              className="w-full border border-neutral-200 pl-4 pr-10 py-3 text-sm focus:outline-none focus:border-black transition-colors"
+            />
+            <button
+              type="button"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-black transition-colors focus:outline-none flex items-center justify-center"
+            >
+              {showConfirmPassword ? (
+                <EyeOff className="w-4 h-4" />
+              ) : (
+                <Eye className="w-4 h-4" />
+              )}
+            </button>
+          </div>
         </div>
 
         <div className="pt-2 pb-4">

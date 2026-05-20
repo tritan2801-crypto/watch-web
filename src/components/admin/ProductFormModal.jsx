@@ -12,6 +12,7 @@ const defaultForm = {
 export default function ProductFormModal({ product, onClose, onSave }) {
   const [form, setForm] = useState(defaultForm);
   const [saving, setSaving] = useState(false);
+  const [imageSource, setImageSource] = useState("url"); // 'url' | 'file'
   const isEditing = Boolean(product);
 
   useEffect(() => {
@@ -23,13 +24,35 @@ export default function ProductFormModal({ product, onClose, onSave }) {
         activeVariantName: product.activeVariantName || "",
         category: product.category || "",
       });
+      if (product.activeImage && product.activeImage.startsWith("data:")) {
+        setImageSource("file");
+      } else {
+        setImageSource("url");
+      }
     } else {
       setForm(defaultForm);
+      setImageSource("url");
     }
   }, [product]);
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      alert("Vui lòng tải lên tệp hình ảnh hợp lệ (PNG, JPG, JPEG, WEBP...)");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      setForm((prev) => ({ ...prev, activeImage: event.target.result }));
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleSubmit = async (e) => {
@@ -129,24 +152,118 @@ export default function ProductFormModal({ product, onClose, onSave }) {
 
               <div>
                 <label className="block text-[10px] font-bold tracking-[0.15em] uppercase text-neutral-500 mb-1.5">
-                  Image URL
+                  Product Image
                 </label>
-                <input
-                  type="text"
-                  name="activeImage"
-                  value={form.activeImage}
-                  onChange={handleChange}
-                  className="w-full border border-gray-300 bg-white px-3 py-2.5 text-[13px] outline-none focus:border-neutral-900 transition-colors"
-                  placeholder="https://..."
-                />
+                
+                {/* Tabs to select URL or File Upload */}
+                <div className="flex border-b border-gray-200 mb-3 text-[10px] font-bold tracking-wider uppercase">
+                  <button
+                    type="button"
+                    onClick={() => setImageSource("url")}
+                    className={`pb-2 pr-4 border-b-2 transition-colors cursor-pointer ${
+                      imageSource === "url"
+                        ? "border-neutral-900 text-neutral-900"
+                        : "border-transparent text-neutral-400 hover:text-neutral-600"
+                    }`}
+                  >
+                    Image URL
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setImageSource("file")}
+                    className={`pb-2 px-4 border-b-2 transition-colors cursor-pointer ${
+                      imageSource === "file"
+                        ? "border-neutral-900 text-neutral-900"
+                        : "border-transparent text-neutral-400 hover:text-neutral-600"
+                    }`}
+                  >
+                    Upload File
+                  </button>
+                </div>
+
+                {imageSource === "url" ? (
+                  <input
+                    type="text"
+                    name="activeImage"
+                    value={form.activeImage}
+                    onChange={handleChange}
+                    className="w-full border border-gray-300 bg-white px-3 py-2.5 text-[13px] outline-none focus:border-neutral-900 transition-colors"
+                    placeholder="https://example.com/image.jpg"
+                  />
+                ) : (
+                  <div className="relative">
+                    <div className="border-2 border-dashed border-gray-300 hover:border-neutral-400 transition-colors rounded-sm p-4 flex flex-col items-center justify-center cursor-pointer bg-gray-50/50">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-6 h-6 text-neutral-400 mb-2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
+                        />
+                      </svg>
+                      <span className="text-xs text-neutral-600 font-semibold mb-0.5">
+                        Click to upload image file
+                      </span>
+                      <span className="text-[10px] text-neutral-400">
+                        Supports PNG, JPG, JPEG, WEBP
+                      </span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleFileChange}
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                      />
+                    </div>
+                  </div>
+                )}
+
                 {form.activeImage && (
-                  <div className="mt-2">
+                  <div className="mt-3 flex items-center space-x-3 bg-neutral-50 border border-neutral-100 p-2 rounded-sm">
                     <img
                       src={form.activeImage}
                       alt="Preview"
-                      className="w-14 h-16 object-cover border border-gray-200 bg-neutral-50 rounded-sm"
-                      onError={(e) => { e.target.style.display = "none"; }}
+                      className="w-10 h-12 object-cover border border-gray-200 bg-white rounded-sm flex-shrink-0"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                      }}
                     />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[9px] font-bold text-neutral-500 uppercase tracking-widest">
+                        Selected Image
+                      </p>
+                      <p className="text-[11px] text-neutral-400 truncate max-w-xs">
+                        {form.activeImage.startsWith("data:")
+                          ? "Base64 Uploaded File"
+                          : form.activeImage}
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setForm((prev) => ({ ...prev, activeImage: "" }))}
+                      className="p-1 text-neutral-400 hover:text-red-500 transition-colors cursor-pointer"
+                      title="Remove image"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.8"
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 )}
               </div>

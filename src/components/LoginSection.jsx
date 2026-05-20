@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { api } from "../api/dbService";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function LoginSection({ onLoginSuccess }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -58,14 +60,27 @@ export default function LoginSection({ onLoginSuccess }) {
           <label className="text-[9px] font-bold tracking-widest text-black uppercase">
             <span className="text-red-500 mr-1">*</span>Password
           </label>
-          <input
-            type="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            className="border border-neutral-200 px-4 py-3 text-sm focus:outline-none focus:border-black transition-colors placeholder:text-neutral-300"
-          />
+          <div className="relative w-full">
+            <input
+              type={showPassword ? "text" : "password"}
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              className="w-full border border-neutral-200 pl-4 pr-10 py-3 text-sm focus:outline-none focus:border-black transition-colors placeholder:text-neutral-300"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-black transition-colors focus:outline-none flex items-center justify-center"
+            >
+              {showPassword ? (
+                <EyeOff className="w-4 h-4" />
+              ) : (
+                <Eye className="w-4 h-4" />
+              )}
+            </button>
+          </div>
         </div>
 
         <div className="flex items-center justify-between pt-1">

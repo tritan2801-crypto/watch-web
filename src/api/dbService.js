@@ -28,12 +28,27 @@ export const api = {
   // --- PRODUCT CRUD ---
   createProduct: async (productData) => {
     try {
+      const activeVariant = productData.activeVariantName || "Default Classic";
+      const activeImg = productData.activeImage || "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=600&q=80";
+
       const response = await fetch(`${API_URL}/products`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...productData,
           price: Number(productData.price),
+          activeVariantName: activeVariant,
+          activeImage: activeImg,
+          rating: productData.rating || "5.0",
+          reviews: productData.reviews || "0",
+          variants: productData.variants || [
+            {
+              key: "variant1",
+              name: activeVariant,
+              colorHex: "#000000",
+              image: activeImg
+            }
+          ],
           id: `prod-${Date.now()}`
         })
       });
@@ -47,12 +62,27 @@ export const api = {
 
   updateProduct: async (id, productData) => {
     try {
+      const activeVariant = productData.activeVariantName || "Default Classic";
+      const activeImg = productData.activeImage || "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=600&q=80";
+
       const response = await fetch(`${API_URL}/products/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...productData,
-          price: Number(productData.price)
+          price: Number(productData.price),
+          activeVariantName: activeVariant,
+          activeImage: activeImg,
+          rating: productData.rating || "5.0",
+          reviews: productData.reviews || "0",
+          variants: productData.variants || [
+            {
+              key: "variant1",
+              name: activeVariant,
+              colorHex: "#000000",
+              image: activeImg
+            }
+          ]
         })
       });
       if (!response.ok) throw new Error("Failed to update product");

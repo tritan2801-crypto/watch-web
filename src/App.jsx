@@ -23,6 +23,9 @@ export default function App() {
   const handleViewChange = (view) => {
     setCurrentView(view);
     window.scrollTo(0, 0);
+    // Cập nhật đường dẫn URL trên thanh địa chỉ trình duyệt để đồng bộ với state
+    const path = view === "home" ? "/" : `/${view}`;
+    window.history.pushState({ view }, "", path);
   };
 
   const handleLogout = () => {
@@ -30,7 +33,45 @@ export default function App() {
     handleViewChange("home");
   };
 
+  // Đồng bộ trạng thái view khi người dùng nhấn nút Back/Forward trên trình duyệt
+  useEffect(() => {
+    const handlePopState = (event) => {
+      if (event.state && event.state.view) {
+        setCurrentView(event.state.view);
+      } else {
+        const path = window.location.pathname;
+        if (path === "/admin") setCurrentView("admin");
+        else if (path === "/dashboard") setCurrentView("dashboard");
+        else if (path === "/auth") setCurrentView("auth");
+        else if (path === "/product") setCurrentView("product");
+        else setCurrentView("home");
+      }
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  // Xử lý kiểm tra đường dẫn URL ban đầu khi tải trang (chỉ chạy 1 lần khi mount)
+  useEffect(() => {
+    const path = window.location.pathname;
+    let initialView = "home";
+    if (path === "/admin") initialView = "admin";
+    else if (path === "/dashboard") initialView = "dashboard";
+    else if (path === "/auth") initialView = "auth";
+    else if (path === "/product") initialView = "product";
+    
+    // Do thông tin đăng nhập lưu trong React memory nên ban đầu currentUser sẽ là null,
+    // ta hướng người dùng về trang chủ nếu họ truy cập trực tiếp các đường dẫn cần đăng nhập.
+    if (initialView === "admin" || initialView === "dashboard") {
+      initialView = "home";
+    }
+    
+    setCurrentView(initialView);
+    window.history.replaceState({ view: initialView }, "", initialView === "home" ? "/" : `/${initialView}`);
+  }, []);
+
   const menuTimeoutRef = useRef(null);
+  const sellersViewportRef = useRef(null);
 
   const handleMouseEnterMenu = (menuName) => {
     if (menuTimeoutRef.current) {
@@ -166,7 +207,6 @@ export default function App() {
   }
 
   // Best Sellers and Stories scroll viewports references
-  const sellersViewportRef = useRef(null);
 
   const scrollSellers = (direction) => {
     const amount = 304; // Width + gap
@@ -863,7 +903,7 @@ export default function App() {
                   <div className="p-5 bg-white border-t border-neutral-100">
                     {/* Variant Selectors */}
                     <div className="flex space-x-2.5 mb-3">
-                      {prod.variants.map((v) => (
+                      {(prod.variants || []).map((v) => (
                         <button
                           key={v.key}
                           onClick={(e) => { e.stopPropagation(); handleVariantChange(prod.id, v); }}
@@ -884,10 +924,10 @@ export default function App() {
                     </p>
 
                     <div className="flex justify-between items-center mt-2 border-t border-neutral-100 pt-2.5">
-                      <span className="text-xs font-bold text-black">${prod.price.toFixed(2)}</span>
+                      <span className="text-xs font-bold text-black">${Number(prod.price || 0).toFixed(2)}</span>
                       <span className="text-[10.5px] text-orange-500 flex items-center select-none font-bold">
                         <Star className="w-3.5 h-3.5 fill-current stroke-none mr-0.5" />
-                        {prod.rating} ({prod.reviews})
+                        {prod.rating || "5.0"} ({prod.reviews || "0"})
                       </span>
                     </div>
                   </div>
