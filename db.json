@@ -1,0 +1,915 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "dob": "1990-01-15",
+      "phone": "1234567890",
+      "email": "user@mvmt.com",
+      "password": "Password1!",
+      "role": "user"
+    },
+    {
+      "id": "a1",
+      "firstName": "Admin",
+      "lastName": "System",
+      "dob": "1985-05-20",
+      "phone": "0987654321",
+      "email": "admin@mvmt.com",
+      "password": "AdminPassword123",
+      "role": "admin"
+    },
+    {
+      "firstName": "Đào",
+      "lastName": "Tân",
+      "dobMonth": "01",
+      "dobDay": "01",
+      "phone": "0325390106",
+      "email": "tritan2801@gmail.com",
+      "confirmEmail": "tritan2801@gmail.com",
+      "password": "123456789T@",
+      "confirmPassword": "123456789T@",
+      "newsletter": false,
+      "role": "user",
+      "id": "u1779251069489"
+    }
+  ],
+  "categories": {
+    "MENS": {
+      "title": "MENS",
+      "tabs": [
+        {
+          "id": "watches",
+          "label": "Watches",
+          "layout": "three-cols-with-banner",
+          "columns": [
+            {
+              "title": "MEN'S WATCHES",
+              "links": [
+                {
+                  "label": "Shop All",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Best Sellers",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "New Arrivals",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Watch Bands",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Last Chance",
+                  "href": "#men-watches",
+                  "isOrange": true
+                }
+              ]
+            },
+            {
+              "title": "FEATURED SHOPS",
+              "links": [
+                {
+                  "label": "Cali Diver",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Odyssey II",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Ceramics",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Dress",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Automatic",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Waterproof",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Chronographs",
+                  "href": "#men-watches"
+                }
+              ]
+            },
+            {
+              "title": "SHOP BY COLOR",
+              "links": [
+                {
+                  "label": "Black",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Green",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Gold",
+                  "href": "#men-watches"
+                },
+                {
+                  "label": "Blue",
+                  "href": "#men-watches"
+                }
+              ]
+            }
+          ],
+          "banner": {
+            "image": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80",
+            "caption": "Trending in the world of MVMT.",
+            "cta": "Shop Best Sellers",
+            "href": "#men-watches"
+          }
+        },
+        {
+          "id": "sunglasses",
+          "label": "Sunglasses",
+          "layout": "three-cols-equal",
+          "columns": [
+            {
+              "title": "MEN'S SUNGLASSES",
+              "links": [
+                {
+                  "label": "Shop All",
+                  "href": "#men-sunglasses"
+                },
+                {
+                  "label": "New Arrivals",
+                  "href": "#men-sunglasses"
+                },
+                {
+                  "label": "Best Sellers",
+                  "href": "#men-sunglasses"
+                },
+                {
+                  "label": "Polarized",
+                  "href": "#men-sunglasses"
+                },
+                {
+                  "label": "Non-Polarized",
+                  "href": "#men-sunglasses"
+                }
+              ]
+            },
+            {
+              "title": "SHOP BY FRAME SHAPE",
+              "links": [
+                {
+                  "label": "Aviator",
+                  "href": "#men-sunglasses"
+                },
+                {
+                  "label": "Rectangle",
+                  "href": "#men-sunglasses"
+                },
+                {
+                  "label": "Round",
+                  "href": "#men-sunglasses"
+                },
+                {
+                  "label": "Square",
+                  "href": "#men-sunglasses"
+                }
+              ]
+            },
+            {
+              "title": "SHOP BY MATERIAL",
+              "links": [
+                {
+                  "label": "Acetate",
+                  "href": "#men-sunglasses"
+                },
+                {
+                  "label": "Stainless Steel",
+                  "href": "#men-sunglasses"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "jewelry",
+          "label": "Jewelry",
+          "layout": "three-cols-with-banner",
+          "columns": [
+            {
+              "title": "MEN'S JEWELRY",
+              "links": [
+                {
+                  "label": "Shop All",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "Best Sellers",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "New Arrivals",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "Necklaces",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "Bracelets",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "Last Chance",
+                  "href": "#men-jewelry",
+                  "isOrange": true
+                }
+              ]
+            },
+            {
+              "title": "FEATURED SHOPS",
+              "links": [
+                {
+                  "label": "Chains",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "Cuffs",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "Leather",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "Pendants",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "Keychains",
+                  "href": "#men-jewelry"
+                }
+              ]
+            },
+            {
+              "title": "SHOP BY COLOR",
+              "links": [
+                {
+                  "label": "Black",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "Brown",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "Gold",
+                  "href": "#men-jewelry"
+                },
+                {
+                  "label": "Silver",
+                  "href": "#men-jewelry"
+                }
+              ]
+            }
+          ],
+          "banner": {
+            "image": "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80",
+            "caption": "Elevate your looks.",
+            "cta": "Shop Best Sellers",
+            "href": "#men-jewelry"
+          }
+        },
+        {
+          "id": "gifting",
+          "label": "Gifting",
+          "layout": "gifting-special",
+          "columns": [
+            {
+              "title": "GIFTING",
+              "links": [
+                {
+                  "label": "Birthday",
+                  "href": "#men-gifting"
+                },
+                {
+                  "label": "Wedding",
+                  "href": "#men-gifting"
+                },
+                {
+                  "label": "Anniversary",
+                  "href": "#men-gifting"
+                },
+                {
+                  "label": "Graduation",
+                  "href": "#men-gifting"
+                }
+              ]
+            }
+          ],
+          "banners": [
+            {
+              "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=400&h=400&q=80",
+              "caption": "Dress to impress.",
+              "cta": "Shop Wedding Gifts",
+              "href": "#men-gifting"
+            },
+            {
+              "image": "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&w=400&h=400&q=80",
+              "caption": "Find something special.",
+              "cta": "Shop Anniversary Gifts",
+              "href": "#men-gifting"
+            }
+          ]
+        },
+        {
+          "id": "limited-edition",
+          "label": "Limited Edition",
+          "layout": "limited-edition-grid",
+          "items": [
+            {
+              "title": "10 YEAR ANNIVERSARY",
+              "image": "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=200&h=200&q=80",
+              "href": "#men-limited"
+            },
+            {
+              "title": "RAPTOR AUTOMATIC",
+              "image": "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=200&h=200&q=80",
+              "href": "#men-limited"
+            },
+            {
+              "title": "9 YEAR ANNIVERSARY EDITION",
+              "image": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=200&h=200&q=80",
+              "href": "#men-limited"
+            },
+            {
+              "title": "COLE EDITION",
+              "image": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=200&h=200&q=80",
+              "href": "#men-limited"
+            },
+            {
+              "title": "RORY KRAMER VISION EDITION",
+              "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=200&h=200&q=80",
+              "href": "#men-limited"
+            }
+          ]
+        },
+        {
+          "id": "last-chance",
+          "label": "Last Chance",
+          "layout": "three-cols-with-banner",
+          "isOrange": true,
+          "columns": [
+            {
+              "title": "LAST CHANCE CLEARANCE",
+              "links": [
+                {
+                  "label": "Shop All Clearance",
+                  "href": "#men-clearance",
+                  "isOrange": true
+                },
+                {
+                  "label": "Under $100",
+                  "href": "#men-clearance"
+                },
+                {
+                  "label": "Under $150",
+                  "href": "#men-clearance"
+                },
+                {
+                  "label": "Final Sale Items",
+                  "href": "#men-clearance"
+                }
+              ]
+            },
+            {
+              "title": "WATCH CLEARANCE",
+              "links": [
+                {
+                  "label": "Legacy Slim Deals",
+                  "href": "#men-clearance"
+                },
+                {
+                  "label": "Field Watch Clearance",
+                  "href": "#men-clearance"
+                },
+                {
+                  "label": "Chronos Discounts",
+                  "href": "#men-clearance"
+                },
+                {
+                  "label": "Minimalist Styles",
+                  "href": "#men-clearance"
+                }
+              ]
+            },
+            {
+              "title": "ACCESSORIES CLEARANCE",
+              "links": [
+                {
+                  "label": "Sunglasses Clearance",
+                  "href": "#men-clearance"
+                },
+                {
+                  "label": "Watch Bands Deals",
+                  "href": "#men-clearance"
+                },
+                {
+                  "label": "Jewelry Clearance",
+                  "href": "#men-clearance"
+                }
+              ]
+            }
+          ],
+          "banner": {
+            "image": "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=600&q=80",
+            "caption": "Final call. Up to 40% off premium men's styles.",
+            "cta": "Shop Clearance Now",
+            "href": "#men-clearance"
+          }
+        }
+      ]
+    },
+    "WOMENS": {
+      "title": "WOMENS",
+      "tabs": [
+        {
+          "id": "watches",
+          "label": "Watches",
+          "layout": "three-cols-with-banner",
+          "columns": [
+            {
+              "title": "WOMEN'S WATCHES",
+              "links": [
+                {
+                  "label": "Shop All",
+                  "href": "#women-watches"
+                },
+                {
+                  "label": "Best Sellers",
+                  "href": "#women-watches"
+                },
+                {
+                  "label": "New Arrivals",
+                  "href": "#women-watches"
+                },
+                {
+                  "label": "Watch Bands",
+                  "href": "#women-watches"
+                },
+                {
+                  "label": "Last Chance",
+                  "href": "#women-watches",
+                  "isOrange": true
+                }
+              ]
+            },
+            {
+              "title": "FEATURED SHOPS",
+              "links": [
+                {
+                  "label": "Boyfriend",
+                  "href": "#women-watches"
+                },
+                {
+                  "label": "Petite",
+                  "href": "#women-watches"
+                },
+                {
+                  "label": "Minimalist",
+                  "href": "#women-watches"
+                },
+                {
+                  "label": "Ceramic",
+                  "href": "#women-watches"
+                }
+              ]
+            },
+            {
+              "title": "SHOP BY COLOR",
+              "links": [
+                {
+                  "label": "Rose Gold",
+                  "href": "#women-watches"
+                },
+                {
+                  "label": "Gold",
+                  "href": "#women-watches"
+                },
+                {
+                  "label": "Silver",
+                  "href": "#women-watches"
+                },
+                {
+                  "label": "Ceramic",
+                  "href": "#women-watches"
+                }
+              ]
+            }
+          ],
+          "banner": {
+            "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=600&q=80",
+            "caption": "Trending in the world of MVMT.",
+            "cta": "Shop Best Sellers",
+            "href": "#women-watches"
+          }
+        },
+        {
+          "id": "sunglasses",
+          "label": "Sunglasses",
+          "layout": "three-cols-equal",
+          "columns": [
+            {
+              "title": "WOMEN'S SUNGLASSES",
+              "links": [
+                {
+                  "label": "Shop All",
+                  "href": "#women-sunglasses"
+                },
+                {
+                  "label": "New Arrivals",
+                  "href": "#women-sunglasses"
+                },
+                {
+                  "label": "Best Sellers",
+                  "href": "#women-sunglasses"
+                },
+                {
+                  "label": "Polarized",
+                  "href": "#women-sunglasses"
+                },
+                {
+                  "label": "Non-Polarized",
+                  "href": "#women-sunglasses"
+                }
+              ]
+            },
+            {
+              "title": "SHOP BY FRAME SHAPE",
+              "links": [
+                {
+                  "label": "Cat Eye",
+                  "href": "#women-sunglasses"
+                },
+                {
+                  "label": "Oversized",
+                  "href": "#women-sunglasses"
+                },
+                {
+                  "label": "Round",
+                  "href": "#women-sunglasses"
+                },
+                {
+                  "label": "Aviator",
+                  "href": "#women-sunglasses"
+                }
+              ]
+            },
+            {
+              "title": "SHOP BY MATERIAL",
+              "links": [
+                {
+                  "label": "Acetate",
+                  "href": "#women-sunglasses"
+                },
+                {
+                  "label": "Stainless Steel",
+                  "href": "#women-sunglasses"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "jewelry",
+          "label": "Jewelry",
+          "layout": "three-cols-with-banner",
+          "columns": [
+            {
+              "title": "WOMEN'S JEWELRY",
+              "links": [
+                {
+                  "label": "Shop All",
+                  "href": "#women-jewelry"
+                },
+                {
+                  "label": "Best Sellers",
+                  "href": "#women-jewelry"
+                },
+                {
+                  "label": "New Arrivals",
+                  "href": "#women-jewelry"
+                },
+                {
+                  "label": "Necklaces",
+                  "href": "#women-jewelry"
+                },
+                {
+                  "label": "Bracelets",
+                  "href": "#women-jewelry"
+                },
+                {
+                  "label": "Last Chance",
+                  "href": "#women-jewelry",
+                  "isOrange": true
+                }
+              ]
+            },
+            {
+              "title": "FEATURED SHOPS",
+              "links": [
+                {
+                  "label": "Rings",
+                  "href": "#women-jewelry"
+                },
+                {
+                  "label": "Earrings",
+                  "href": "#women-jewelry"
+                },
+                {
+                  "label": "Delicate Chains",
+                  "href": "#women-jewelry"
+                },
+                {
+                  "label": "Bangles",
+                  "href": "#women-jewelry"
+                }
+              ]
+            },
+            {
+              "title": "SHOP BY COLOR",
+              "links": [
+                {
+                  "label": "Gold",
+                  "href": "#women-jewelry"
+                },
+                {
+                  "label": "Rose Gold",
+                  "href": "#women-jewelry"
+                },
+                {
+                  "label": "Silver",
+                  "href": "#women-jewelry"
+                }
+              ]
+            }
+          ],
+          "banner": {
+            "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
+            "caption": "Elevate your looks.",
+            "cta": "Shop Best Sellers",
+            "href": "#women-jewelry"
+          }
+        },
+        {
+          "id": "limited-edition",
+          "label": "Limited Edition",
+          "layout": "limited-edition-grid",
+          "items": [
+            {
+              "title": "CLASSIC BOULEVARD",
+              "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=200&h=200&q=80",
+              "href": "#women-limited"
+            },
+            {
+              "title": "CORONADO ROSE GOLD",
+              "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=200&h=200&q=80",
+              "href": "#women-limited"
+            },
+            {
+              "title": "MALIBU GLOW EDITION",
+              "image": "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&w=200&h=200&q=80",
+              "href": "#women-limited"
+            }
+          ]
+        },
+        {
+          "id": "last-chance",
+          "label": "Last Chance",
+          "layout": "three-cols-with-banner",
+          "isOrange": true,
+          "columns": [
+            {
+              "title": "LAST CHANCE CLEARANCE",
+              "links": [
+                {
+                  "label": "Shop All Clearance",
+                  "href": "#women-clearance",
+                  "isOrange": true
+                },
+                {
+                  "label": "Under $100",
+                  "href": "#women-clearance"
+                },
+                {
+                  "label": "Under $150",
+                  "href": "#women-clearance"
+                },
+                {
+                  "label": "Final Sale Items",
+                  "href": "#women-clearance"
+                }
+              ]
+            },
+            {
+              "title": "WATCH CLEARANCE",
+              "links": [
+                {
+                  "label": "Petite Deals",
+                  "href": "#women-clearance"
+                },
+                {
+                  "label": "Boulevard Clearance",
+                  "href": "#women-clearance"
+                },
+                {
+                  "label": "Rose Gold Specials",
+                  "href": "#women-clearance"
+                },
+                {
+                  "label": "Ceramic Styles",
+                  "href": "#women-clearance"
+                }
+              ]
+            },
+            {
+              "title": "ACCESSORIES CLEARANCE",
+              "links": [
+                {
+                  "label": "Sunglasses Clearance",
+                  "href": "#women-clearance"
+                },
+                {
+                  "label": "Jewelry clearance",
+                  "href": "#women-clearance"
+                }
+              ]
+            }
+          ],
+          "banner": {
+            "image": "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80",
+            "caption": "Final call. Up to 40% off premium women's styles.",
+            "cta": "Shop Clearance Now",
+            "href": "#women-clearance"
+          }
+        }
+      ]
+    },
+    "LAST_CHANCE": {
+      "title": "LAST CHANCE",
+      "tabs": [
+        {
+          "id": "mens-last-chance",
+          "label": "Mens",
+          "layout": "three-cols-with-banner",
+          "columns": [
+            {
+              "title": "MEN'S LAST CHANCE",
+              "links": [
+                {
+                  "label": "Shop All",
+                  "href": "#men-clearance"
+                },
+                {
+                  "label": "Watches",
+                  "href": "#men-clearance"
+                },
+                {
+                  "label": "Blue Light Glasses",
+                  "href": "#men-clearance"
+                },
+                {
+                  "label": "Jewelry",
+                  "href": "#men-clearance"
+                }
+              ]
+            }
+          ],
+          "banner": {
+            "image": "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=600&q=80",
+            "caption": "Stack and save.",
+            "cta": "Shop Last Chance",
+            "href": "#men-clearance"
+          }
+        },
+        {
+          "id": "womens-last-chance",
+          "label": "Womens",
+          "layout": "three-cols-with-banner",
+          "columns": [
+            {
+              "title": "WOMEN'S LAST CHANCE",
+              "links": [
+                {
+                  "label": "Shop All",
+                  "href": "#women-clearance"
+                },
+                {
+                  "label": "Watches",
+                  "href": "#women-clearance"
+                },
+                {
+                  "label": "Blue Light Glasses",
+                  "href": "#women-clearance"
+                },
+                {
+                  "label": "Jewelry",
+                  "href": "#women-clearance"
+                }
+              ]
+            }
+          ],
+          "banner": {
+            "image": "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?auto=format&fit=crop&w=600&q=80",
+            "caption": "Stack and save.",
+            "cta": "Shop Last Chance",
+            "href": "#women-clearance"
+          }
+        }
+      ]
+    }
+  },
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Legacy Slim Auto",
+      "price": 295,
+      "activeVariantName": "Gold Navy Leather",
+      "activeImage": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=600&q=80",
+      "rating": "4.9",
+      "reviews": "428",
+      "variants": [
+        {
+          "key": "variant1",
+          "name": "Gold Navy Leather",
+          "colorHex": "#c5a059",
+          "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          "key": "variant2",
+          "name": "Ocean Silver",
+          "colorHex": "#c0c0c0",
+          "image": "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=600&q=80"
+        }
+      ]
+    },
+    {
+      "id": "prod-2",
+      "name": "Legacy Link",
+      "price": 260,
+      "activeVariantName": "Silver Steel",
+      "activeImage": "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=600&q=80",
+      "rating": "4.8",
+      "reviews": "112",
+      "variants": [
+        {
+          "key": "variant1",
+          "name": "Silver Steel",
+          "colorHex": "#c0c0c0",
+          "image": "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=600&q=80"
+        }
+      ]
+    },
+    {
+      "id": "prod-3",
+      "name": "Nova Signature Rect",
+      "price": 195,
+      "activeVariantName": "Gold Classic",
+      "activeImage": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80",
+      "rating": "4.7",
+      "reviews": "86",
+      "variants": [
+        {
+          "key": "variant1",
+          "name": "Gold Classic",
+          "colorHex": "#d4af37",
+          "image": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=600&q=80"
+        }
+      ]
+    },
+    {
+      "id": "prod-4",
+      "name": "Legacy Classic",
+      "price": 210,
+      "activeVariantName": "Gold Brown Leather",
+      "activeImage": "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=600&q=80",
+      "rating": "4.9",
+      "reviews": "194",
+      "variants": [
+        {
+          "key": "variant1",
+          "name": "Gold Brown Leather",
+          "colorHex": "#a05a2c",
+          "image": "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=600&q=80"
+        }
+      ]
+    }
+  ]
+}
